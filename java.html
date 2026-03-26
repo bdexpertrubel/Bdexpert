@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login System</title>
 
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background: #2a5298;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2>Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button class="btn" onclick="login()">Login</button>
+
+    <p id="error" class="error"></p>
+</div>
+
+<script>
+
+function login() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    var error = document.getElementById("error");
+
+    // Empty check
+    if(user === "" || pass === "") {
+        error.innerText = "Please fill all fields!";
+        return;
+    }
+
+    // Fake login check
+    if(user === "admin" && pass === "1234") {
+        alert("Login Successful 😎");
+    } else {
+        error.innerText = "Wrong Username or Password!";
+    }
+}
+
+</script>
+
+</body>
+</html>
