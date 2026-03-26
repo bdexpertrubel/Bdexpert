@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Responsive Website</title>
+    <title>MRK Technology</title>
 
     <style>
         body {
@@ -10,14 +9,25 @@
             font-family: Arial, sans-serif;
         }
 
+        .login-btn {
+    background: orange;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+    background: red;
+    color: white;
+}
+
         /* Navbar */
         .navbar {
             background: #111;
-            color: white;
             padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: white;
         }
 
         .nav-links a {
@@ -26,89 +36,125 @@
             text-decoration: none;
         }
 
-        /* Hero */
+        .nav-links a:hover {
+            color: yellow;
+        }
+
+        /* Hero Section */
         .hero {
-            background: #333;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url("https://via.placeholder.com/1200");
+            height: 300px;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 60px 20px;
         }
 
         /* Cards */
         .cards {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            flex-wrap: wrap;
             padding: 20px;
         }
 
         .card {
             background: #f4f4f4;
+            margin: 10px;
             padding: 20px;
             width: 250px;
             border-radius: 10px;
             text-align: center;
+            transition: 0.3s;
         }
 
-        /* 📱 Mobile Responsive */
-        @media (max-width: 768px) {
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
+        /* Button */
+        .btn {
+            background: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+        }
 
-            .nav-links {
-                margin-top: 10px;
-            }
+        .btn:hover {
+            background: orange;
+        }
 
-            .cards {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card {
-                width: 90%;
-            }
+        /* Footer */
+        .footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
         }
 
     </style>
 </head>
 
 <body>
+  
+   
+
+</div>
 
     <!-- Navbar -->
     <div class="navbar">
-        <h2>MRK Technology</h2>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </div>
+
+    <!-- Left Menu Icon -->
+    <div class="menu-icon">&#9776;</div>
+
+    <!-- Title -->
+    <h2>MRK Technology</h2>
+
+    <!-- Right Side -->
+    <div class="nav-links">
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
     </div>
 
     <!-- Hero -->
     <div class="hero">
-        <h1>Responsive Website</h1>
-        <p>Mobile & Desktop friendly 😎</p>
+        <div>
+            <h1>Welcome to MRK Technology</h1>
+            <p>Learn Web Design Easily 🚀</p>
+        </div>
     </div>
 
     <!-- Cards -->
     <div class="cards">
         <div class="card">
             <h3>HTML</h3>
-            <p>Structure</p>
+            <p>Website structure তৈরি করতে ব্যবহার হয়</p>
+            <div class="btn">Learn More</div>
         </div>
 
         <div class="card">
             <h3>CSS</h3>
-            <p>Design</p>
+            <p>Website সুন্দর করতে ব্যবহার হয়</p>
+            <div class="btn">Learn More</div>
         </div>
 
         <div class="card">
-            <h3>JS</h3>
-            <p>Function</p>
+            <h3>JavaScript</h3>
+            <p>Website interactive করতে ব্যবহার হয়</p>
+            <div class="btn">Learn More</div>
         </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2026 MRK Technology | All Rights Reserved</p>
     </div>
 
 </body>
