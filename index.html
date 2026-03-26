@@ -1,294 +1,115 @@
+
 <!DOCTYPE html>
-<html lang="bn">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game Coin App</title>
+    <title>Responsive Website</title>
 
-<style>
-.logo img {
-    height: 50px;
-    width: auto;
-}
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #00c853;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    color: #ffffff;
-}
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #0b3d2e;
-    color: white;
-}
-
-/* Header */
-.header {
-    background: #0a2f23;
-    padding: 5px;
-    text-align: center;
-    font-weight: bold;
-    position: relative;
-}
-
-/* Hamburger */
-.menu-btn {
-    position: absolute;
-    left: 10px;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-/* Drawer */
-.side-drawer {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 200px;
-    height: 100%;
-    background: #145c44;
-    padding: 20px;
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-.side-drawer div {
-    margin: 15px 0;
-    cursor: pointer;
-} 
-/* Rubel */
-.rubel  {
-  background-color: #3498db; /* Button er color */
-  color: white; 
-  padding: 50px 40px;
-  border: opx;
-  border-radius: 5px;
-  margin-left: 80px;
-  margin-top: 5px;
-  margin-right: 10px;
-}
-
-/* Balance */
-.balance {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    background: #145c44;
-}
-
-/* Jackpot */
-.jackpot {
-    margin: 0px;
-    padding: 50px;
-    background: black;
-    border-radius: 5px;
-    text-align: center;
-    color: gold;
-}
-
-/* Sidebar (centered) */
-.sidebar {
-    position: fixed;
-    left: 0;
-    top: 53%;
-    transform: translateY(-50%);
-    width: 70px;
-}
-
-.menu {
-    background: linear-gradient(145deg, #1e7f5c, #145c44);
-    margin: 10px;
-    padding: 12px 5px;
-    text-align: center;
-    border-radius: 15px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.menu:hover {
-    transform: scale(1.1);
-}
-
-.menu.active {
-    background: #00c853;
-}
-
-/* Games */
-.games {
-    margin-left: 80px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 10px;
-}
-
-.game {
-    background: #1e7f5c;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.game img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Bottom Nav */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #0a2f23;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-}
-</style>
-
-</head>
-<body>
-
-<!-- Header -->
-<div class="header">
-    <span class="menu-btn" onclick="toggleMenu()">☰</span>
- <div class="logo"<a href="https://imgbb.com/"><img src="https://i.ibb.co.com/PsHPNw6j/wps-PKLUCK-logoc-20240902204022.png" alt="wps PKLUCK电子logoc 20240902204022" border="0"></a> </div>
-</div>
-
-<!-- Drawer Menu -->
-<div class="side-drawer" id="drawer">
-    <div onclick="closeMenu()">❌ Close</div>
-    <div>🏠 Home</div>
-    <div>👤 Profile</div>
-    <div>💰 Wallet</div>
-    <div>⚙️ Settings</div>
-</div>
-
-
-
-<!-- Jackpot -->
-<div class="jackpot">
-    🏆 JACKPOT<br>Win Coins Every Play!
-</div>
- 
-<!-- Balance -->
-<div class="balance">
-    <div>Coins<br><span id="coins">0</span></div>
-    <div onclick="addCoins()">➕ Add</div>
-    <div onclick="playGame()">🎮 Play</div>
-</div>
-
-<!-- Rubel-->
-<div class="rubel"> add </div>
-
-<!-- Sidebar -->
-<div class="sidebar">
-    <div class="menu active">🔥<br>Trending</div>
-    <div class="menu">❤️<br>Favorites</div>
-    <div class="menu">🎰<br>Slots</div>
-    <div class="menu">⚽<br>Sports</div>
-</div>
-
-<!-- Games -->
-<div class="games">
-    <div class="game" onclick="playGame()">
-        <img src="https://via.placeholder.com/100">Aviator
-    </div>
-    <div class="game" onclick="playGame()">
-        <a href="https://imgbb.com/"><img src="https://i.ibb.co.com/vxjPLT0j/IMG-20260325-092755.jpg" alt="IMG 20260325 092755" border="0"></a>
-    </div>
-    <div class="game" onclick="playGame()">
-        <img src="https://via.placeholder.com/100">Money
-    </div>
-    <div class="game" onclick="playGame()">
-        <img src="https://via.placeholder.com/100">Fortune Gems
-    </div>
-    <div class="game" onclick="playGame()">
-        <img src="https://via.placeholder.com/100">Element
-    </div>
-    <div class="game" onclick="playGame()">
-        <img src="https://via.placeholder.com/100">Coin Game
-    </div>
-</div>
-
-<!-- Bottom Nav -->
-<div class="bottom-nav">
-    <div>Home</div>
-    <div>Promo</div>
-    <div>Invite</div>
-    <div>VIP</div>
-    <div>Profile</div>
-</div>
-
-<script>
-// Drawer menu
-function toggleMenu() {
-    document.getElementById("drawer").style.left = "0";
-}
-function closeMenu() {
-    document.getElementById("drawer").style.left = "-250px";
-}
-
-// Coin system
-let coins = localStorage.getItem("coins") 
-    ? Number(localStorage.getItem("coins")) 
-    : 100;
-
-function loadCoins() {
-    document.getElementById("coins").innerText = coins;
-}
-
-function addCoins() {
-    let amount = prompt("কত coin যোগ করবেন?");
-    if (!amount) return;
-
-    coins += Number(amount);
-    localStorage.setItem("coins", coins);
-    loadCoins();
-}
-
-function playGame() {
-    let cost = 10;
-
-    if (coins >= cost) {
-        coins -= cost;
-
-        let win = Math.random() > 0.5;
-
-        if (win) {
-            let reward = 20;
-            coins += reward;
-            alert("🎉 আপনি জিতেছেন! +" + reward + " coins");
-        } else {
-            alert("😢 আপনি হেরেছেন!");
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
 
-        localStorage.setItem("coins", coins);
-        loadCoins();
-    } else {
-        alert("❌ Coin নেই");
-    }
-}
+        /* Navbar */
+        .navbar {
+            background: #111;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-// Sidebar active
-const menus = document.querySelectorAll(".menu");
-menus.forEach(menu => {
-    menu.addEventListener("click", () => {
-        menus.forEach(m => m.classList.remove("active"));
-        menu.classList.add("active");
-    });
-});
+        .nav-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
 
-// Load coins
-loadCoins();
-</script>
+        /* Hero */
+        .hero {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        /* Cards */
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .card {
+            background: #f4f4f4;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* 📱 Mobile Responsive */
+        @media (max-width: 768px) {
+
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+            }
+
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>MRK Technology</h2>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Responsive Website</h1>
+        <p>Mobile & Desktop friendly 😎</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+        <div class="card">
+            <h3>HTML</h3>
+            <p>Structure</p>
+        </div>
+
+        <div class="card">
+            <h3>CSS</h3>
+            <p>Design</p>
+        </div>
+
+        <div class="card">
+            <h3>JS</h3>
+            <p>Function</p>
+        </div>
+    </div>
 
 </body>
-</html
+</html>
